@@ -106,7 +106,7 @@ namespace topGlove.Controllers
        
         private List<TrayTrackinInput> GetFilter(RequestModel requestModel)
         {
-            var response = dataContext.TrayDetails.Where(a => a.DataTime.Date >= requestModel.FromDate.Date && a.DataTime.Date
+            var response = dataContext.TrayDetails.Where(a => a.DateTime.Date >= requestModel.FromDate.Date && a.DateTime.Date
             <= requestModel.ToDate.Date);
             if(!string.IsNullOrWhiteSpace(requestModel.User) && response.Any())
             {
