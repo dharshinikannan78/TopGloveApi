@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c/V9pG0LnckPHgOgDS0Apu7b45RSWaLA7VoMvYO5lExMylb0oTRTkHK23/tZH6x3WE8yHghjHSTQWsT1pQSmAQ==",
+  "dgSpecHash": "9ycdqMHZL/XxUFdUeQY/rFIicZCpPMpeMKdPu6eNt0nGhDmwTlol5ajblH7azr0RrNa/qx0BgDA3l1QVp46F+w==",
   "success": true,
-  "projectFilePath": "D:\\WEB\\TopGlove-14\\API\\topGlove\\topGlove\\topGlove.csproj",
+  "projectFilePath": "D:\\WEB\\TopGlove-14\\API\\topGlove\\topGlove\\TopGlove.TrayTracking.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\K\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
     "C:\\Users\\K\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",

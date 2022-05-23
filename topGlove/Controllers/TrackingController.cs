@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,13 +16,14 @@ using topGlove.Model;
 
 namespace topGlove.Controllers
 {
+    [EnableCors("AllowOrigin")]
     [Route("api/[controller]")]
     [ApiController]
-    public class TrackingControl : ControllerBase
+    public class TrackingController : ControllerBase
     {
         public readonly UserDbContext dataContext;
 
-        public TrackingControl(UserDbContext userData)
+        public TrackingController(UserDbContext userData)
         {
             dataContext = userData;
         }

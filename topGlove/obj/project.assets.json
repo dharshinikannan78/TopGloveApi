@@ -7324,9 +7324,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WEB\\TopGlove-14\\API\\topGlove\\topGlove\\topGlove.csproj",
-      "projectName": "topGlove",
-      "projectPath": "D:\\WEB\\TopGlove-14\\API\\topGlove\\topGlove\\topGlove.csproj",
+      "projectUniqueName": "D:\\WEB\\TopGlove-14\\API\\topGlove\\topGlove\\TopGlove.TrayTracking.Api.csproj",
+      "projectName": "TopGlove.TrayTracking.Api",
+      "projectPath": "D:\\WEB\\TopGlove-14\\API\\topGlove\\topGlove\\TopGlove.TrayTracking.Api.csproj",
       "packagesPath": "C:\\Users\\K\\.nuget\\packages\\",
       "outputPath": "D:\\WEB\\TopGlove-14\\API\\topGlove\\topGlove\\obj\\",
       "projectStyle": "PackageReference",
