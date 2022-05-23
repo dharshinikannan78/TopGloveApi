@@ -12,7 +12,7 @@ using System.Linq;
 using topGlove.Data;
 using topGlove.Extension;
 using topGlove.Model;
-
+using TopGlove.TrayTracking.Api.Model;
 
 namespace topGlove.Controllers
 {
@@ -103,6 +103,7 @@ namespace topGlove.Controllers
                         fileName);
         }
 
+       
         private List<TrayTrackinInput> GetFilter(RequestModel requestModel)
         {
             var response = dataContext.TrayDetails.Where(a => a.DataTime.Date >= requestModel.FromDate.Date && a.DataTime.Date
@@ -111,9 +112,13 @@ namespace topGlove.Controllers
             {
                 response = response.Where(a => a.User == requestModel.User);
             }
+            if (!string.IsNullOrWhiteSpace(requestModel.Process) && response.Any())
+            {
+                response = response.Where(a => a.Proces == requestModel.User);
+            }
+
             return response.ToList();
-        }
-        
+        }     
     }
 }
 
