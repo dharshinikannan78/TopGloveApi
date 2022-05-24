@@ -18,7 +18,7 @@ namespace topGlove.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserDetails>().ToTable("userdetails");
-            modelBuilder.Entity<TrayTrackinInput>().ToTable("traytrackinginputs");
+            modelBuilder.Entity<TrayTrackinInput>().ToTable("traytrackingdetails");
         }
         }
 }

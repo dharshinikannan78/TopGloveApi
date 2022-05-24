@@ -28,6 +28,13 @@ namespace topGlove.Controllers
             dataContext = userData;
         }
 
+        [HttpGet("GetTrayDetails")]
+        public IActionResult GetTrayDetails()
+        {
+            var getTrayDetails = dataContext.TrayDetails.AsQueryable();
+            return Ok(getTrayDetails);
+        }
+
         [HttpPost("AddTrayDetail")]
 
         public IActionResult AddTrayDetail([FromBody] TrayTrackinInput inputOperatorData)
@@ -114,7 +121,7 @@ namespace topGlove.Controllers
             }
             if (!string.IsNullOrWhiteSpace(requestModel.Process) && response.Any())
             {
-                response = response.Where(a => a.Proces == requestModel.User);
+                response = response.Where(a => a.Process == requestModel.User);
             }
 
             return response.ToList();
