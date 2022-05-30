@@ -45,6 +45,7 @@ namespace topGlove.Controllers
             }
             else
             {
+                inputOperatorData.Status = "Inprogress";
                 dataContext.TrayDetails.Add(inputOperatorData);
                 dataContext.SaveChanges();
                 return Ok(inputOperatorData);
@@ -72,6 +73,7 @@ namespace topGlove.Controllers
                 return Ok(inputData);
             }
         }
+
 
         [HttpDelete("DeleteTrayDetail")]
 
@@ -121,7 +123,7 @@ namespace topGlove.Controllers
             }
             if (!string.IsNullOrWhiteSpace(requestModel.Process) && response.Any())
             {
-                response = response.Where(a => a.Process == requestModel.User);
+                response = response.Where(a => a.Process == requestModel.Process);
             }
 
             return response.ToList();

@@ -16,6 +16,8 @@ namespace topGlove.Model
         public string Process { get; set; }
         public string Status { get; set; }
         public string AdditionalInfo { get; set; }
-       
+        public string TrolleyNo { get; set; }
+        public string Shift { get; set; }
+
     }
 }

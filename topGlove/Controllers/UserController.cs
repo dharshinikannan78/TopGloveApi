@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using topGlove.Data;
 using topGlove.Model;
 
@@ -21,6 +23,14 @@ namespace topGlove.Controllers
             dataContext = userData;
         }
 
+
+        [HttpGet("GetUserDetails")] 
+
+        public IActionResult GetUserDetails()
+        {
+            var UserDetails = dataContext.Login.AsQueryable();
+            return Ok(UserDetails);
+        }
 
         [HttpPost("AddUser")]
 
@@ -77,6 +87,26 @@ namespace topGlove.Controllers
             }
         }
 
+        [HttpGet("UserExist")]
+        public IActionResult GetUser(string obj)
+        {
+            var userDetails = dataContext.Login.AsNoTracking().FirstOrDefault(x=>x.UserName == obj);
+            if (userDetails == null)
+            {
+                return Ok(new
+                {
+                    message = "You Can Enter"
+                }); ;
+            }
+            else
+            {
+                return Ok(new
+                {
+                    message = "already Exist"
+                });
+            }
+        }
+
         [HttpDelete("DeletUser")]
         public IActionResult DeletUser(int id )
         {
@@ -93,10 +123,31 @@ namespace topGlove.Controllers
             }
         }         
 
+        [HttpGet("enc")]
+        public IActionResult  Encryptdata(string password)
+        {
+            string strmsg = string.Empty;
+            byte[] encode = new byte[password.Length];
+            encode = Encoding.UTF8.GetBytes(password);
+            strmsg = Convert.ToBase64String(encode);
+            return Ok(strmsg);
+        }
+
+        [HttpGet("dec")]
+        public IActionResult  Decryptdata(string encryptpwd)
+        {
+            string decryptpwd = string.Empty;
+            UTF8Encoding encodepwd = new UTF8Encoding();
+            Decoder Decode = encodepwd.GetDecoder();
+            byte[] todecode_byte = Convert.FromBase64String(encryptpwd);
+            int charCount = Decode.GetCharCount(todecode_byte, 0, todecode_byte.Length);
+            char[] decoded_char = new char[charCount];
+            Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
+            decryptpwd = new String(decoded_char);
+            return Ok(decryptpwd);
+        }
 
 
-
-   
     }                   
     
 }

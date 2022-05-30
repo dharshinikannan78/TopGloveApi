@@ -12,6 +12,7 @@ namespace topGlove.Model
 
         public string Process { get; set; }
 
-        
+   
+
     }
 }
