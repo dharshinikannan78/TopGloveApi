@@ -45,7 +45,7 @@ namespace topGlove.Controllers
             }
             else
             {
-                inputOperatorData.Status = "Inprogress";
+                inputOperatorData.Status = "IN Progress";
                 dataContext.TrayDetails.Add(inputOperatorData);
                 dataContext.SaveChanges();
                 return Ok(inputOperatorData);

@@ -107,6 +107,7 @@ namespace topGlove.Controllers
             }
         }
 
+
         [HttpDelete("DeletUser")]
         public IActionResult DeletUser(int id )
         {
@@ -125,12 +126,13 @@ namespace topGlove.Controllers
 
         [HttpGet("enc")]
         public IActionResult  Encryptdata(string password)
-        {
-            string strmsg = string.Empty;
-            byte[] encode = new byte[password.Length];
-            encode = Encoding.UTF8.GetBytes(password);
-            strmsg = Convert.ToBase64String(encode);
-            return Ok(strmsg);
+        {          
+                string strmsg = string.Empty;
+                byte[] encode = new byte[password.Length];
+                encode = Encoding.UTF8.GetBytes(password);
+                strmsg = Convert.ToBase64String(encode);
+                return Ok(strmsg);
+            
         }
 
         [HttpGet("dec")]
