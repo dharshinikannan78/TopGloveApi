@@ -30,6 +30,7 @@ namespace topGlove
         {
 
             services.AddControllers();
+            
             services.AddCors(options =>
             {
                 options.AddPolicy(name: "AllowOrigin",
